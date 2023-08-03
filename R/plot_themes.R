@@ -8,6 +8,9 @@
 #' Set custom theme for plots that is well suited for papers
 #'
 #' @return None
+#' @import ggplot2
+#' @import sysfonts
+#' @import showtext
 #' @export
 paper_plot_theme <- function() {
     # Load custom fonts

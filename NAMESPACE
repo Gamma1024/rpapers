@@ -2,3 +2,6 @@
 
 export(paper_plot_theme)
 export(set_plot_specs)
+import(ggplot2)
+import(showtext)
+import(sysfonts)

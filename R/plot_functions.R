@@ -2,6 +2,9 @@
 
 #' Set plot specifications
 #' @return A list of plot specifications
+#' @import ggplot2
+#' @import sysfonts
+#' @import showtext
 #' @export
 set_plot_specs <- function() {
     # set theme for plots
