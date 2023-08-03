@@ -1,0 +1,17 @@
+Package: rpapers
+Title: R Themes and Functions for Papers
+Version: 1.0.0.0
+Authors@R: 
+    person("Jan", "Schlegel", , "janschlgel33@gmail.com", role = c("aut", "cre"))
+Description: A series of tools useful for writing papers.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: ggplot2, sysfonts, showtext
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
