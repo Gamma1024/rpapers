@@ -6,9 +6,8 @@
 \usage{
 set_plot_specs()
 }
-\value{
-A list of plot specifications
-}
 \description{
-Set plot specifications
+This function sets the plot specifications for the current
+session. It sets the theme for plots, enables showtext for the graphic
+device and sets the dpi of the graphic device.
 }

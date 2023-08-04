@@ -16,7 +16,7 @@
              symbol = "lmroman10_math.otf")
     showtext_auto()
     setwd(wd)
-  }
+}
 
 
 #' Paper Plot Theme
@@ -24,17 +24,14 @@
 #' Set custom theme for plots that is well suited for papers
 #'
 #' @return None
-#' @import ggplot2
+#' @importFrom ggplot2 theme element_text element_rect element_line element_blank
+#' rel margin
 #' @importFrom sysfonts font_add
-#' @importFrom proto proto
-#' @import showtext
 #' @export
-paper_plot_theme <- function() {
-    .load.lmroman()
+paper_theme <- function() {
     # Load custom fonts
-    # set theme
-    ggplot2::theme_set(
-        ggplot2::theme(
+    .load.lmroman()
+    ggplot2::theme(
             plot.title = ggplot2::element_text(face = "bold", size = rel(1.1), hjust = .5, colour = "#130f09"),
             text = ggplot2::element_text(),
             panel.background = ggplot2::element_rect(fill =NA, color = NA, linewidth = 0),
@@ -66,11 +63,53 @@ paper_plot_theme <- function() {
             legend.key.size = ggplot2::unit(.3, "cm"),
             strip.background = ggplot2::element_rect(fill = "#ddd8d8", color = "#130f09", linewidth = 0.25),
             strip.text = ggplot2::element_text(face = "bold", size = 8, margin = margin(t = 2, b = 2, 0, 0))
-        )
     )
 }
 
 
 
 
+#' Custom Color Scale for Papers
+#'
+#' @param ... Additional arguments passed to \code{\link{discrete_scale}}
+#'
+#' @return None
+#' @export
+#' @importFrom ggplot2 discrete_scale
+#' @importFrom scales manual_pal
+scale_color_paper <- function(...){
+  discrete_scale(
+    "color", "paper", manual_pal(
+      values = c(
+        "#b2f76d",
+        "#fea73e",
+        "#fe68f9",
+        "#5552fb",
+        "#fb6b6b",
+        "#9f6d02")
+    ), ...)
+}
+
+
+
+#' Custom Fill Scale for Papers
+#'
+#' @param ... Additional arguments passed to \code{\link{discrete_scale}}
+#'
+#' @return None
+#' @export
+#' @importFrom ggplot2 discrete_scale
+#' @importFrom scales manual_pal
+scale_color_paper <- function(...){
+  discrete_scale(
+    "fill", "paper", manual_pal(
+      values = c(
+        "#b2f76d",
+        "#fea73e",
+        "#fe68f9",
+        "#5552fb",
+        "#fb6b6b",
+        "#9f6d02")
+    ), ...)
+}
 

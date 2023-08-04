@@ -5,6 +5,6 @@
 #expect_warning
 #expect_output
 test_that("theme loads", {
-  expect_error(paper_plot_theme(), NA)
+  expect_error(paper_theme(), NA)
 })
 
