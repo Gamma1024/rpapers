@@ -10,11 +10,11 @@
     font_path <- system.file("fonts", package="rpapers")
     setwd(font_path)
     font_add(family = "lmroman",
-             regular = sub("\\..*", "", "lmroman10_regular.otf"),
-             bold = sub("\\..*", "","lmroman10_bold.otf"),
-             italic = sub("\\..*", "","lmroman10_italic.otf"),
-             bolditalic = sub("\\..*", "","lmroman10_bolditalic.otf"),
-             symbol = sub("\\..*", "","lmroman10_math.otf"))
+             regular = "lmroman10_regular.otf",
+             bold = "lmroman10_bold.otf",
+             italic = "lmroman10_italic.otf",
+             bolditalic = "lmroman10_bolditalic.otf",
+             symbol = "lmroman10_math.otf")
     showtext_auto()
     setwd(wd)
   }
