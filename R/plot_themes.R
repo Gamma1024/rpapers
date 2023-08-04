@@ -2,9 +2,8 @@
 
 
 
-  ##' @importFrom sysfonts font_add
-  ##' @importFrom showtext showtext_auto
-  ##' @export
+  #' @importFrom sysfonts font_add
+  #' @importFrom showtext showtext_auto
   .load.lmroman <- function() {
     wd <- getwd()
     font_path <- system.file("fonts", package="rpapers")
