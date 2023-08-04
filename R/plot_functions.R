@@ -8,12 +8,23 @@
 #' @export
 set_plot_specs <- function() {
     # set theme for plots
-    set_plot_theme()
+    paper_plot_theme()
     # automatically use showtext for graphic device
     showtext::showtext_auto(enable = TRUE)
     # set dpi of graphics device
     showtext::showtext_opts(dpi = 600)
 }
 
+
+#' Title
+#'
+#' @param n n
+#'
+#' @return n factorial
+#' @export
+factorial <- function(n) {
+  if (n <= 1) return(1)
+  else return(n * factorial(n-1))
+}
 
 

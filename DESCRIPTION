@@ -12,6 +12,7 @@ Imports:
     ggplot2,
     sysfonts,
     showtext,
+    proto,
     testthat
 Suggests: 
     knitr,

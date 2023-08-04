@@ -2,6 +2,23 @@
 
 
 
+  ##' @importFrom sysfonts font_add
+  ##' @importFrom showtext showtext_auto
+  ##' @export
+  .load.lmroman <- function() {
+    wd <- getwd()
+    font_path <- system.file("fonts", package="rpapers")
+    setwd(font_path)
+    font_add(family = "lmroman",
+             regular = sub("\\..*", "", "lmroman10_regular.otf"),
+             bold = sub("\\..*", "","lmroman10_bold.otf"),
+             italic = sub("\\..*", "","lmroman10_italic.otf"),
+             bolditalic = sub("\\..*", "","lmroman10_bolditalic.otf"),
+             symbol = sub("\\..*", "","lmroman10_math.otf"))
+    showtext_auto()
+    setwd(wd)
+  }
+
 
 #' Paper Plot Theme
 #'
@@ -9,19 +26,13 @@
 #'
 #' @return None
 #' @import ggplot2
-#' @import sysfonts
+#' @importFrom sysfonts font_add
+#' @importFrom proto proto
 #' @import showtext
 #' @export
 paper_plot_theme <- function() {
+    .load.lmroman()
     # Load custom fonts
-    sysfonts::font_add(
-      family = "lmroman",
-      regular = "inst/Fonts/lmroman10_regular.otf",
-      bold = "inst/Fonts/lmroman10_bold.otf",
-      italic = "isnt/Fonts/lmroman10_italic.otf",
-      bolditalic = "inst/Fonts/lmroman10_bolditalic.otf",
-      symbol = "Fonts/lmroman10_math.otf"
-    )
     # set theme
     ggplot2::theme_set(
         ggplot2::theme(
