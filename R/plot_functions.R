@@ -65,7 +65,7 @@ label_facets <- function(plot,
     label = paste0(open, type[1:nrow(layout)], close)
   )
   plot + geom_text(
-    data = labels_by_facet,
+    data = labels_by_facet, color = "#130f09",
     aes(x = -Inf, y = Inf, label =.data[["label"]]),
     hjust = hjust,
     vjust = vjust
