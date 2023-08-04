@@ -4,7 +4,10 @@
 \alias{set_plot_specs}
 \title{Set plot specifications}
 \usage{
-set_plot_specs()
+set_plot_specs(dpi = 600)
+}
+\arguments{
+\item{dpi}{dpi of the text}
 }
 \description{
 This function sets the plot specifications for the current

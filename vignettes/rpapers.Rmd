@@ -10,10 +10,37 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  dpi = 300
 )
 ```
 
 ```{r setup}
 library(rpapers)
+library(ggplot2)
 ```
+
+```{r overwrite ggplot}
+# overwrite global ggplot function to use scale_color_paper 
+# and scale_fill_paper
+ggplot <- function(...) {
+      ggplot2::ggplot(...) +
+      rpapers::scale_color_paper() +
+      rpapers::scale_fill_paper()
+}
+
+# set global plot specifications
+set_plot_specs(200)
+
+# example plot
+p <- ggplot(mtcars, 
+            aes(x = mpg, y = hp, col = factor(cyl), fill = factor(cyl))) +
+  geom_point(alpha = .5) +
+  geom_smooth(method = "lm") + 
+  labs(title = "mtcars Example Plot", subtitle = "This is a subtitle",
+       caption = "Source: mtcars") + 
+  facet_wrap(~cyl)
+
+label_facets(p, "alpha")
+```
+

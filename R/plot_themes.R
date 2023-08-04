@@ -100,7 +100,7 @@ scale_color_paper <- function(...){
 #' @export
 #' @importFrom ggplot2 discrete_scale
 #' @importFrom scales manual_pal
-scale_color_paper <- function(...){
+scale_fill_paper <- function(...){
   discrete_scale(
     "fill", "paper", manual_pal(
       values = c(

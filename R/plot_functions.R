@@ -6,23 +6,19 @@
 #' @description This function sets the plot specifications for the current
 #' session. It sets the theme for plots, enables showtext for the graphic
 #' device and sets the dpi of the graphic device.
-#' @importFrom ggplot2 theme_set ggplot
+#' @param dpi dpi of the text
+#' @importFrom ggplot2 theme_set
 #' @importFrom showtext showtext_auto showtext_opts
 #' @return NULL
 #' @export
-set_plot_specs <- function() {
+set_plot_specs <- function(dpi = 600) {
     # use paper color and fill scales by default
-    ggplot <- function(...) {
-      ggplot2::ggplot(...) +
-      scale_color_paper() +
-      scale_fill_paper()
-    }
     # set theme for plots
     theme_set(paper_theme())
     # automatically use showtext for graphic device
     showtext::showtext_auto(enable = TRUE)
     # set dpi of graphics device
-    showtext::showtext_opts(dpi = 600)
+    showtext::showtext_opts(dpi = dpi)
 }
 
 
