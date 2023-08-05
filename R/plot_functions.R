@@ -70,15 +70,3 @@ label_facets <- function(plot,
 }
 
 
-#' Title
-#'
-#' @param n n
-#'
-#' @return n factorial
-#' @export
-factorial <- function(n) {
-  if (n <= 1) return(1)
-  else return(n * factorial(n-1))
-}
-
-
