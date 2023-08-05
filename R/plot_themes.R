@@ -25,44 +25,49 @@
 #'
 #' @return None
 #' @importFrom ggplot2 theme element_text element_rect element_line element_blank
-#' rel margin
+#' rel margin unit
 #' @importFrom sysfonts font_add
 #' @export
 paper_theme <- function() {
     # Load custom fonts
     .load.lmroman()
-    ggplot2::theme(
-            plot.title = ggplot2::element_text(face = "bold", size = rel(1.1), hjust = .5, colour = "#130f09"),
-            text = ggplot2::element_text(),
-            panel.background = ggplot2::element_rect(fill =NA, color = NA, linewidth = 0),
-            plot.background = ggplot2::element_rect(fill = NA, color = NA, linewidth = 0, linetype = 1),
-            panel.border = ggplot2::element_rect("#999999", fill = "transparent"),
-            panel.grid.minor.y = ggplot2::element_line(colour = "#eeeeee", linewidth = 0.5),
-            panel.grid.major = ggplot2::element_line(colour = "#eeeeee", linewidth = 0.5),
-            panel.grid.minor = ggplot2::element_blank(),
-            axis.ticks = ggplot2::element_blank(),
-            axis.text = ggplot2::element_text(size = 6),
-            axis.title.x = ggplot2::element_text(vjust = -.2),
-            axis.title.y = ggplot2::element_text(angle = 90, vjust = 2),
-            axis.text.y = ggplot2::element_text(vjust = 0.2, hjust = 0.95),
-            axis.text.x = ggplot2::element_text(margin = margin(0, 0, 0, 0)),
-            axis.title = ggplot2::element_text(face = "bold", size = rel(1)),
-            #plot.title = element_text(size = 10, face = "bold", hjust = 0, margin = margin(0, 0, 0, b = 5)),
-            plot.subtitle = ggplot2::element_text(size = 8, hjust = 0, margin = margin(0, 0, 0, b = 2)),
-            plot.caption = ggplot2::element_text(size = 8, hjust = 1),
-            legend.position = "bottom",
-            legend.background = ggplot2::element_rect(fill = "transparent", colour = NA, linewidth = 0),
-            legend.justification = .5,
-            legend.title = ggplot2::element_text(face = "italic", size = 8, margin = ggplot2::margin(b = 0, 0, 0, 0), hjust = .5),
-            legend.direction = "horizontal",
-            legend.text = ggplot2::element_text(size = 8, margin = ggplot2::margin(l = 0, 0, 0, 0)),
-            legend.box.spacing = ggplot2::unit(0, "cm"),
-            legend.box.margin = ggplot2::margin(0, 0, 0, 0),
-            plot.margin = ggplot2::margin(5, 5, 5, 5),
-            legend.key = ggplot2::element_rect(fill = "transparent", color = "transparent"),
-            legend.key.size = ggplot2::unit(.3, "cm"),
-            strip.background = ggplot2::element_rect(fill = "#ddd8d8", color = "#130f09", linewidth = 0.25),
-            strip.text = ggplot2::element_text(face = "bold", size = 8, margin = margin(t = 2, b = 2, 0, 0))
+    theme(
+      # text
+      text = element_text(family = "lmroman", color = "#130f09"),
+      # plot
+      plot.title = element_text(face = "bold", size = rel(.9), hjust = .5,
+                                color = "#130f09"),
+      plot.subtitle = element_text(size = rel(.7), hjust = .5),
+      plot.caption = element_text(size = rel(.7), hjust = 1),
+      plot.background = element_rect(fill = NA, color = NA),
+      # panel
+      panel.background = element_rect(fill = NA, color = NA),
+      panel.border = element_rect(color = NA),
+      panel.grid.major = element_line(colour = "#eeeeee", linewidth = rel(1)),
+      panel.grid.minor = element_blank(),
+      # axis
+      axis.ticks = element_line(),
+      axis.text = element_text(size = rel(.8)),
+      axis.line = element_line(color = "#282828", linewidth = rel(.8)),
+      axis.title.x = element_text(vjust = -.2),
+      axis.title.y = element_text(angle = 90, vjust = 2),
+      axis.text.y = element_text(size = rel(.7), vjust = .5,
+                                 margin = margin(r = 2)),
+      axis.text.x = element_text(size = rel(.7), margin = margin(2, 0, 0, 0)),
+      axis.title = element_text(face = "bold", size = rel(.8)),
+      # legend
+      legend.position = "bottom",
+      legend.background = element_rect(fill = "transparent", color = NA),
+      legend.title = element_text(face = "italic", size = rel(.8), hjust = .5),
+      legend.direction = "horizontal",
+      legend.text = element_text(size = rel(.8)),
+      legend.box.spacing = unit(.2, "cm"),
+      legend.key = element_rect(fill = "transparent", color = "transparent"),
+      legend.key.size = unit(.3, "cm"),
+      # facets
+      strip.background = element_rect(fill = "#ddd8d8", color = "#282828"),
+      strip.text = element_text(face = "bold", size = rel(.7),
+                                margin = margin(t = 2.5, b = 2.5))
     )
 }
 
