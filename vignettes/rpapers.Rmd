@@ -23,14 +23,14 @@ library(ggplot2)
 ```{r overwrite ggplot}
 # overwrite global ggplot function to use scale_color_paper 
 # and scale_fill_paper
-ggplot <- function(...) {
-      ggplot2::ggplot(...) +
-      rpapers::scale_color_paper() +
-      rpapers::scale_fill_paper()
-}
+# ggplot <- function(...) {
+#       ggplot2::ggplot(...) +
+#       rpapers::scale_color_paper() +
+#       rpapers::scale_fill_paper()
+# }
 
 # set global plot specifications
-set_plot_specs(200)
+set_paper_plot_specs(nseg = 12, dpi = 200)
 
 # example plot
 p <- ggplot(mtcars, 
@@ -39,6 +39,8 @@ p <- ggplot(mtcars,
   geom_smooth(method = "lm") + 
   labs(title = "mtcars Example Plot", subtitle = "This is a subtitle",
        caption = "Source: mtcars") + 
+  scale_color_paper() +
+  scale_fill_paper() +
   facet_wrap(~cyl)
 
 label_facets(p, "alpha")

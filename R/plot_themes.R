@@ -113,3 +113,48 @@ scale_fill_paper <- function(...){
     ), ...)
 }
 
+
+
+#' Black and White Color Scale for Papers
+#'
+#' @param ... Additional arguments passed to \code{\link{discrete_scale}}
+#' @importFrom ggplot2 discrete_scale
+#' @importFrom scales manual_pal
+#' @return None
+#' @export
+scale_color_paper_bw <- function(...){
+  discrete_scale(
+    "color", "paper", manual_pal(
+      values = c(
+        "#000000",
+        "#666666",
+        "#CCCCCC",
+        "#333333",
+        "#999999",
+        "#EEEEEE")
+    ), ...)
+}
+
+
+#' Black and White Fill Scale for Papers
+#'
+#' @param ... Additional arguments passed to \code{\link{discrete_scale}}
+#' @importFrom ggplot2 discrete_scale
+#' @importFrom scales manual_pal
+#' @return None
+#' @export
+scale_fill_paper_bw <- function(...){
+  discrete_scale(
+    "fill", "paper", manual_pal(
+      values = c(
+        "#000000",
+        "#666666",
+        "#CCCCCC",
+        "#333333",
+        "#999999",
+        "#EEEEEE")
+    ), ...)
+}
+
+
+

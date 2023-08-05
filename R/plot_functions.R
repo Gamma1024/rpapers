@@ -7,24 +7,25 @@
 #' session. It sets the theme for plots, enables showtext for the graphic
 #' device and sets the dpi of the graphic device.
 #' @param dpi dpi of the text
+#' @param nseg control the smoothness of the glyphs
 #' @importFrom ggplot2 theme_set
 #' @importFrom showtext showtext_auto showtext_opts
 #' @return NULL
 #' @export
-set_plot_specs <- function(dpi = 600) {
+set_paper_plot_specs <- function(nseg = 12, dpi = 600) {
     # use paper color and fill scales by default
     # set theme for plots
     theme_set(paper_theme())
     # automatically use showtext for graphic device
     showtext::showtext_auto(enable = TRUE)
     # set dpi of graphics device
-    showtext::showtext_opts(dpi = dpi)
+    showtext::showtext_opts(nseg = nseg, dpi = dpi)
 }
 
 
 
 #' Label facets of a ggplot2 plot
-#'
+#
 #' Function adapted from the tag_facet function in the egg package
 #'
 #' @param plot A ggplot2 plot

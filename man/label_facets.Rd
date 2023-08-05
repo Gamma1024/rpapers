@@ -2,7 +2,8 @@
 % Please edit documentation in R/plot_functions.R
 \name{label_facets}
 \alias{label_facets}
-\title{Label facets of a ggplot2 plot}
+\title{Label facets of a ggplot2 plot
+Function adapted from the tag_facet function in the egg package}
 \usage{
 label_facets(
   plot,
@@ -35,5 +36,6 @@ top to bottom, if FALSE, labels are ordered from left to right}
 A ggplot2 plot with labelled facets
 }
 \description{
+Label facets of a ggplot2 plot
 Function adapted from the tag_facet function in the egg package
 }
