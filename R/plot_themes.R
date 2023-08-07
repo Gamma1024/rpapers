@@ -38,7 +38,7 @@ paper_theme <- function(fontfamily = "IBMPlexSans-Medium",
                         plot_background_fill = NA,
                         panel_background_fill = NA) {
     # Load custom fonts
-    if (font == "lmroman") .load.lmroman()
+    if (fontfamily == "lmroman") .load.lmroman()
     else sysfonts::font_add_google("Roboto")
     theme(
         # text
