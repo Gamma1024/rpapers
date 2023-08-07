@@ -21,27 +21,31 @@
 
 #' Paper Plot Theme
 #'
-#' Set custom theme for plots that is well suited for papers
-#'
+#' @description Set custom theme for plots that is well suited for papers
+#' @param fontfamily Fontfamily that will be used. Default is IBMPlexSans-Medium.
+#' Next to the traditional fonts the LaTeX/ Latin Roman 10 font will be loaded and
+#' can be selected using "lmroman" as fontfamily
+#' @param plot_background_fill fill color of the plot background; default is NA
+#' @param panel_background_fill fill color of the panel background; default is NA
 #' @return None
 #' @importFrom ggplot2 theme element_text element_rect element_line element_blank
 #' rel margin unit
 #' @importFrom sysfonts font_add
 #' @export
-paper_theme <- function() {
+paper_theme <- function(fontfamily = "IBMPlexSans-Medium", plot_background_fill = NA, panel_background_fill = NA) {
     # Load custom fonts
     .load.lmroman()
     theme(
         # text
-        text = element_text(family = "IBMPlexSans-Medium", color = "#130f09"),
+        text = element_text(family = fontfamily, color = "#130f09"),
         # plot
         plot.title = element_text(face = "bold", size = rel(.9), hjust = .5, vjust = 1.5,
                                   color = "#130f09"),
         plot.subtitle = element_text(size = rel(.7), hjust = .5),
         plot.caption = element_text(size = rel(.7), hjust = 1),
-        plot.background = element_rect(fill = NA, color = NA),
+        plot.background = element_rect(fill = plot_background_fill, color = NA),
         # panel
-        panel.background = element_rect(fill = NA, color = NA),
+        panel.background = element_rect(fill = panel_background_fill, color = NA),
         panel.border = element_rect("#a5a5a5", fill = "transparent", linewidth = rel(2)),
         panel.grid.major = element_line(colour = "#eeeeee", linewidth = rel(1.2)),
         panel.grid.minor = element_blank(),
