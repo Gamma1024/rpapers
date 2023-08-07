@@ -12,7 +12,7 @@
 #' @importFrom showtext showtext_auto showtext_opts
 #' @return NULL
 #' @export
-set_paper_plot_specs <- function(fontfamily = "roboto",
+set_paper_plot_specs <- function(fontfamily = "ibm",
                                  plot_background_fill = NA,
                                  panel_background_fill = NA,
                                  nseg = 12, dpi = 300) {
