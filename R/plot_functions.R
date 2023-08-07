@@ -12,10 +12,17 @@
 #' @importFrom showtext showtext_auto showtext_opts
 #' @return NULL
 #' @export
-set_paper_plot_specs <- function(nseg = 12, dpi = 300) {
+set_paper_plot_specs <- function(fontfamily = "roboto",
+                                 plot_background_fill = NA,
+                                 panel_background_fill = NA,
+                                 nseg = 12, dpi = 300) {
     # use paper color and fill scales by default
     # set theme for plots
-    theme_set(paper_theme())
+    theme_set(paper_theme(
+      fontfamily = fontfamily, plot_background_fill = plot_background_fill,
+      panel_background_fill = panel_background_fill
+      )
+    )
     # automatically use showtext for graphic device
     showtext::showtext_auto()
     # set dpi of graphics device
