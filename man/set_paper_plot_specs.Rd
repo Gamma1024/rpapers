@@ -4,7 +4,7 @@
 \alias{set_paper_plot_specs}
 \title{Set plot specifications}
 \usage{
-set_paper_plot_specs(nseg = 12, dpi = 600)
+set_paper_plot_specs(nseg = 12, dpi = 300)
 }
 \arguments{
 \item{nseg}{control the smoothness of the glyphs}

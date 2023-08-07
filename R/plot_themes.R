@@ -8,7 +8,7 @@
     wd <- getwd()
     font_path <- system.file("fonts", package="rpapers")
     setwd(font_path)
-    font_add(family = "lmroman",
+    font_add(family = "lmroman10",
              regular = "lmroman10_regular.otf",
              symbol = "lmroman10_math.otf",
              italic = "lmroman10_italic.otf",
@@ -19,13 +19,30 @@
 }
 
 
+#' @importFrom sysfonts font_add
+#' @importFrom showtext showtext_auto
+.load.ibm <- function(){
+  wd <- getwd()
+  font_path <- system.file("fonts", package="rpapers")
+  setwd(font_path)
+  font_add(family = "ibm",
+           regular = "IBMPlexSans-Regular.ttf",
+           symbol = "lmroman10_math.otf",
+           italic = "IBMPlexSans-Italic.ttf",
+           bold = "IBMPlexSans-Bold.ttf",
+           bolditalic = "IBMPlexSans-Bold.ttf")
+  showtext_auto()
+  setwd(wd)
+}
+
 #' Paper Plot Theme
 #'
 #' @description Set custom theme for plots that is well suited for papers
-#' @param fontfamily Fontfamily that will be used. Default is IBMPlexSans-Medium.
+#' @param fontfamily Fontfamily that will be used. Default is IBMPlex-Sans with
+#' lmroman10 for symbols.
 #' Next to the traditional fonts the LaTeX/ Latin Roman 10 font will be loaded
-#' and
-#' can be selected using "lmroman" as fontfamily
+#' andcan be selected using "lmroman10" as fontfamily. Finally, use "roboto"
+#' to select the "Roboto" google font.
 #' @param plot_background_fill fill color of the plot background; default is NA
 #' @param panel_background_fill fill color of the panel background; default is
 #'  NA
@@ -34,12 +51,13 @@
 #' element_blank rel margin unit
 #' @importFrom sysfonts font_add font_add_google
 #' @export
-paper_theme <- function(fontfamily = "Roboto",
+paper_theme <- function(fontfamily = "roboto",
                         plot_background_fill = NA,
                         panel_background_fill = NA) {
     # Load custom fonts
-    if (fontfamily == "lmroman") .load.lmroman()
-    else sysfonts::font_add_google("Roboto")
+    if (fontfamily == "lmroman10") .load.lmroman()
+    if (fontfamily == "ibm") .load.ibm()
+    if (fontfamily == "roboto") sysfonts::font_add_google("Roboto")
     theme(
         # text
         text = element_text(family = fontfamily, color = "#130f09"),

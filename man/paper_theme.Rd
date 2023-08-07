@@ -5,16 +5,17 @@
 \title{Paper Plot Theme}
 \usage{
 paper_theme(
-  fontfamily = "IBMPlexSans-Medium",
+  fontfamily = "roboto",
   plot_background_fill = NA,
   panel_background_fill = NA
 )
 }
 \arguments{
-\item{fontfamily}{Fontfamily that will be used. Default is IBMPlexSans-Medium.
+\item{fontfamily}{Fontfamily that will be used. Default is IBMPlex-Sans with
+lmroman10 for symbols.
 Next to the traditional fonts the LaTeX/ Latin Roman 10 font will be loaded
-and
-can be selected using "lmroman" as fontfamily}
+andcan be selected using "lmroman10" as fontfamily. Finally, use "roboto"
+to select the "Roboto" google font.}
 
 \item{plot_background_fill}{fill color of the plot background; default is NA}
 

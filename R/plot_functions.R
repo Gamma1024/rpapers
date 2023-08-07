@@ -12,12 +12,12 @@
 #' @importFrom showtext showtext_auto showtext_opts
 #' @return NULL
 #' @export
-set_paper_plot_specs <- function(nseg = 12, dpi = 600) {
+set_paper_plot_specs <- function(nseg = 12, dpi = 300) {
     # use paper color and fill scales by default
     # set theme for plots
     theme_set(paper_theme())
     # automatically use showtext for graphic device
-    showtext::showtext_auto(enable = TRUE)
+    showtext::showtext_auto()
     # set dpi of graphics device
     showtext::showtext_opts(nseg = nseg, dpi = dpi)
 }
