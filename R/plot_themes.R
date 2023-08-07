@@ -34,7 +34,7 @@
 #' element_blank rel margin unit
 #' @importFrom sysfonts font_add font_add_google
 #' @export
-paper_theme <- function(fontfamily = "IBMPlexSans-Medium",
+paper_theme <- function(fontfamily = "Roboto",
                         plot_background_fill = NA,
                         panel_background_fill = NA) {
     # Load custom fonts
