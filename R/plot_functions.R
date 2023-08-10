@@ -6,6 +6,9 @@
 #' @description This function sets the plot specifications for the current
 #' session. It sets the theme for plots, enables showtext for the graphic
 #' device and sets the dpi of the graphic device.
+#' @param fontfamily font family to use for the plots
+#' @param plot_background_fill background fill of the plot
+#' @param panel_background_fill background fill of the panel
 #' @param dpi dpi of the text
 #' @param nseg control the smoothness of the glyphs
 #' @importFrom ggplot2 theme_set

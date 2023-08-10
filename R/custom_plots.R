@@ -42,6 +42,9 @@
 #'
 #' @return A ggplot2 geom
 #' @import ggplot2
+#' @importFrom plyr arrange
+#' @importFrom scales zero_range
+#' @importFrom grid grobTree
 #' @export
 geom_split_violin <- function(mapping = NULL, data = NULL, stat = "ydensity", position = "identity", ...,
                               draw_quantiles = NULL, trim = TRUE, scale = "area", na.rm = FALSE,
@@ -73,3 +76,5 @@ geom_split_violin <- function(mapping = NULL, data = NULL, stat = "ydensity", po
         position = position, show.legend = show.legend, inherit.aes = inherit.aes,
         params = list(trim = trim, scale = scale, draw_quantiles = draw_quantiles, na.rm = na.rm, ...))
 }
+
+

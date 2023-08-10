@@ -4,9 +4,21 @@
 \alias{set_paper_plot_specs}
 \title{Set plot specifications}
 \usage{
-set_paper_plot_specs(nseg = 12, dpi = 300)
+set_paper_plot_specs(
+  fontfamily = "ibm",
+  plot_background_fill = NA,
+  panel_background_fill = NA,
+  nseg = 12,
+  dpi = 300
+)
 }
 \arguments{
+\item{fontfamily}{font family to use for the plots}
+
+\item{plot_background_fill}{background fill of the plot}
+
+\item{panel_background_fill}{background fill of the panel}
+
 \item{nseg}{control the smoothness of the glyphs}
 
 \item{dpi}{dpi of the text}
