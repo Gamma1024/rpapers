@@ -47,13 +47,15 @@ set_paper_plot_specs <- function(fontfamily = "ibm",
 #' @param hjust horizontal alignment of label. Default is -0.5
 #' @param top_down logical. Default is FALSE. If TRUE, labels are ordered from
 #' top to bottom, if FALSE, labels are ordered from left to right
+#' @param fontface fontface of label. Default is "bold"
+#' @param ... Additional arguments passed to geom_text
 #' @importFrom ggplot2 ggplot_build geom_text aes
 #' @return A ggplot2 plot with labelled facets
 #' @export
 label_facets <- function(plot,
                          type = c("alpha", "ALPHA", "num", "roman", "ROMAN"),
                          open = "(", close = ")", vjust = 2, hjust = -0.5,
-                         top_down = FALSE) {
+                         top_down = FALSE, fontface = "bold", ...) {
   type <- match.arg(type)
   type <- switch(type,
                  "alpha" = letters[1:26],
@@ -73,9 +75,12 @@ label_facets <- function(plot,
   )
   plot + geom_text(
     data = labels_by_facet, color = "#130f09",
-    aes(x = -Inf, y = Inf, label =.data[["label"]]),
+    aes(x = -Inf, y = Inf, label = .data[["label"]]),
     hjust = hjust,
-    vjust = vjust
+    vjust = vjust,
+    inherit.aes = FALSE,
+    fontface = fontface,
+    ...
   )
 }
 
