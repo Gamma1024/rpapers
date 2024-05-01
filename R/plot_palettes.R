@@ -3,7 +3,7 @@
 
 #' Custom Color Scale for Papers
 #'
-#' @description A simple pastel color palette for use in papers. Other packages that
+#' @description A simple bright color palette for use in papers. Other packages that
 #' include useful color palettes are \code{RColorBrewer}, \code{viridis},
 #' \code{wesanderson}, and \code{ggsci}.
 #'
@@ -13,21 +13,18 @@
 #' @export
 #' @importFrom ggplot2 discrete_scale
 #' @importFrom scales manual_pal
-scale_color_paper <- function(...){
+scale_color_paper_cb <- function(...){
   discrete_scale(
     "color", "paper", manual_pal(
       values = c(
-        "#597dbf",
-        "#d98b5f",
-        "#359187",
-        "#A44B4B",
-        "#A05FBB",
-        "#CCCCCC",
-        "#745c54",
-        "#B8AA2B",
-        "#5BC6F7",
-        "#333333",
-        "#897e77"
+        "#cfff3c",
+        "#007329",
+        "#870089",
+        "#49ecff",
+        "#002956",
+        "#ffbecc",
+        "#3894ff",
+        "#fb00b9"
       )
     ), ...)
 }
@@ -37,7 +34,37 @@ scale_color_paper <- function(...){
 
 
 
-#' Custom Fill Scale for Papers
+#' Custom Bright Colorblind-Friendly Fill Scale for Papers
+#'
+#' @description A simple bright color palette for use in papers. Other packages that
+#' include useful color palettes are \code{RColorBrewer}, \code{viridis},
+#' \code{wesanderson}, and \code{ggsci}.
+#'
+#' @param ... Additional arguments passed to \code{\link{discrete_scale}}
+#'
+#' @return None
+#' @export
+#' @importFrom ggplot2 discrete_scale
+#' @importFrom scales manual_pal
+scale_fill_paper_cb <- function(...){
+  discrete_scale(
+    "fill", "paper", manual_pal(
+      values = c(
+        "#cfff3c",
+        "#007329",
+        "#870089",
+        "#49ecff",
+        "#002956",
+        "#ffbecc",
+        "#3894ff",
+        "#fb00b9"
+      )
+    ), ...)
+}
+
+
+
+#' Custom Pastel Color Scale for Papers
 #'
 #' @description A simple pastel color palette for use in papers. Other packages that
 #' include useful color palettes are \code{RColorBrewer}, \code{viridis},
@@ -49,21 +76,51 @@ scale_color_paper <- function(...){
 #' @export
 #' @importFrom ggplot2 discrete_scale
 #' @importFrom scales manual_pal
-scale_fill_paper <- function(...){
+scale_color_paper_pastel <- function(...){
+  discrete_scale(
+    "color", "paper", manual_pal(
+      values = c(
+        "#8646c7",
+        "#9fcd53",
+        "#c66a44",
+        "#4e304a",
+        "#c9528e",
+        "#92cbae",
+        "#9195c3",
+        "#5e693e"
+      )
+    ), ...)
+}
+
+
+
+
+
+
+#' Custom Pastel Fill Scale for Papers
+#'
+#' @description A simple pastel color palette for use in papers. Other packages that
+#' include useful color palettes are \code{RColorBrewer}, \code{viridis},
+#' \code{wesanderson}, and \code{ggsci}.
+#'
+#' @param ... Additional arguments passed to \code{\link{discrete_scale}}
+#'
+#' @return None
+#' @export
+#' @importFrom ggplot2 discrete_scale
+#' @importFrom scales manual_pal
+scale_fill_paper_pastel <- function(...){
   discrete_scale(
     "fill", "paper", manual_pal(
       values = c(
-        "#597dbf",
-        "#d98b5f",
-        "#359187",
-        "#A44B4B",
-        "#A05FBB",
-        "#CCCCCC",
-        "#745c54",
-        "#B8AA2B",
-        "#5BC6F7",
-        "#333333",
-        "#897e77"
+        "#8646c7",
+        "#9fcd53",
+        "#c66a44",
+        "#4e304a",
+        "#c9528e",
+        "#92cbae",
+        "#9195c3",
+        "#5e693e"
       )
     ), ...)
 }
