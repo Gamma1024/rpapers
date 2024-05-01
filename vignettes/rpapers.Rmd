@@ -39,8 +39,8 @@ p <- ggplot(mtcars,
   geom_smooth(method = "lm") + 
   labs(title = "mtcars Example Plot", subtitle = "This is a subtitle",
        caption = "Source: mtcars") + 
-  scale_color_paper() +
-  scale_fill_paper() +
+  scale_color_paper_pastel() +
+  scale_fill_paper_pastel() +
   facet_wrap(~cyl)
 
 label_facets(p, "alpha")
